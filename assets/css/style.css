@@ -29,6 +29,7 @@ h1{
   font-size: 2rem;
   color: var(--text-color);
   text-shadow: 1px 2px 3px #8b8787, 2px 2px 2px #949292, 3px 3px 4px #b1afaf;
+  margin-bottom: 30px;
   
 }
 
@@ -75,8 +76,26 @@ h1{
   z-index: -1;    
 }
 
+.user-card::after{
+  content:'';
+  position: absolute;
 
-.user-card:after{
+  min-height: 100%;
+
+  width:100%;
+  border-radius: inherit;
+  background-color:inherit;
+  box-shadow: inherit;
+
+  transform: scaleX(80%);
+  top: -30px;
+  
+  z-index: -4;    
+}
+
+
+
+.user-info:after{
   position: absolute;
   content: '+';
   display: inline-block;
@@ -90,6 +109,7 @@ h1{
   right: -22px;
   top:calc(50% - 25px);
   cursor: pointer;
+  color: #000;
 
   
 }
@@ -174,7 +194,7 @@ h1{
   .user-status-container{
     justify-content:space-around;
   }
-  .user-card:after{
+  .user-info:after{
     display: none;
   }
 .user-photo{
