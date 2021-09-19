@@ -1,0 +1,190 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+--text-color:rgba(172, 171, 171, 0.933);
+--attention-color:#fede48;
+font-family:  Verdana, Geneva, Tahoma, sans-serif;
+font-size:18px;
+  
+}
+
+body{
+  background-color:#dfdede;
+  
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1{
+  text-align: right;
+  margin:10px;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: var(--text-color);
+  text-shadow: 1px 2px 3px #8b8787, 2px 2px 2px #949292, 3px 3px 4px #b1afaf;
+  
+}
+
+.user-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+}
+
+
+.user-card{
+  display: flex;
+
+  min-height: 35vh;
+
+  max-width: 460px;
+  width: 90%;
+  border-radius: 10px;
+  position: relative;
+  font-size: 0.9rem;
+  margin: 20px  auto;
+
+  background-color: #fff;
+ 
+  box-shadow: 0px 0px 15px 2px #6666;
+  
+}
+
+.user-card::before{
+  content:'';
+  position: absolute;
+
+  min-height: 100%;
+
+  width:100%;
+  border-radius: inherit;
+  background-color:inherit;
+  box-shadow: inherit;
+
+  transform: scaleX(90%);
+  top: -15px;
+  
+  z-index: -1;    
+}
+
+
+.user-card:after{
+  position: absolute;
+  content: '+';
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color:var(--attention-color);
+  border-radius: 50%;
+  font-size: 1.7rem;
+  text-align: center;
+  line-height: 40px;
+  right: -22px;
+  top:calc(50% - 25px);
+  cursor: pointer;
+
+  
+}
+
+
+
+.image-wrapper{
+  width: 40%;
+  
+}
+
+.user-photo{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+  
+}
+
+.user-info{
+  margin: auto;
+  margin-left: 10%;
+  color: var(--text-color);
+  
+}
+
+.user-personal-info{
+  margin-bottom: 25px;
+}
+
+.user-name{
+  color:#000;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  
+}
+
+.user-status-container{
+  display: flex;
+  font-size: 1.1rem;
+  
+}
+
+.user-status{
+  display: flex;
+  flex-direction:column;
+  margin-right: 20%;
+}
+
+.pro{
+  position:absolute;
+  right: 20px;
+  top: 10px;
+  background-color: var(--text-color);
+  border-radius: 40%;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 40px;
+  text-align: center;
+  
+   
+    
+}
+
+
+@media (max-width:550px){
+  .user-card{
+    flex-direction: column;
+    
+  }
+
+  .image-wrapper{
+    width: 100%;
+   
+  }
+  .user-info{
+    margin: 0;
+    padding: 1.5rem;
+  }
+
+  .user-status-container{
+    justify-content:space-around;
+  }
+  .user-card:after{
+    display: none;
+  }
+.user-photo{
+  height: 350px;
+  border-radius: 10px 10px 0 0 ;
+}
+
+  .pro{
+    top: 65%;
+  }
+}
+
+
